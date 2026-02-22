@@ -5,61 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BoredCheese | 7 Games for the Bored</title>
     <style>
-        /* General Styles */
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background: #fff5ba; text-align: center; margin: 0; padding: 20px; }
-        .header { margin-bottom: 50px; }
-        h1 { font-size: 4rem; color: #d4a017; -webkit-text-stroke: 2px black; margin: 0; }
-        p { font-size: 1.2rem; font-weight: bold; color: #333; }
+        /* General Setup */
+        body { 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            background: #fff5ba; 
+            text-align: center; 
+            margin: 0; 
+            padding: 20px; 
+            color: #333;
+        }
 
-        /* The Grid */
+        /* Title Area */
+        .header { margin-bottom: 50px; padding-top: 20px; }
+        h1 { 
+            font-size: 4.5rem; 
+            color: #d4a017; 
+            margin: 0;
+            filter: drop-shadow(4px 4px 0px #000);
+            text-transform: uppercase;
+        }
+        .tagline { font-size: 1.2rem; font-weight: bold; margin-top: 10px; }
+
+        /* The Game Grid */
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
             gap: 25px; 
-            max-width: 1200px; 
+            max-width: 1100px; 
             margin: 0 auto; 
+            padding: 20px;
         }
 
         /* The Game Cards */
         .card { 
             background: white; 
-            border: 5px solid #000; 
+            border: 4px solid #000; 
             padding: 30px; 
             text-decoration: none; 
             color: #000; 
-            transition: 0.15s; 
-            box-shadow: 10px 10px 0px #000; 
+            transition: all 0.2s ease-in-out; 
+            box-shadow: 8px 8px 0px #000; 
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
 
-        /* Hover Effect */
+        /* Interaction Effects */
         .card:hover { 
-            transform: translate(-5px, -5px); 
-            box-shadow: 15px 15px 0px #d4a017; 
+            transform: translate(-4px, -4px); 
+            box-shadow: 12px 12px 0px #d4a017; 
             background: #fffdeb; 
         }
 
-        .emoji { font-size: 4rem; margin-bottom: 10px; }
-        .card h2 { margin: 0; font-size: 1.6rem; }
+        .emoji { font-size: 4rem; margin-bottom: 15px; }
+        .card h2 { margin: 0; font-size: 1.5rem; }
         
         /* Footer */
-        footer { margin-top: 50px; font-size: 0.8rem; color: #777; }
+        footer { 
+            margin-top: 60px; 
+            padding-bottom: 20px;
+            font-size: 0.9rem; 
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>🧀 BORED CHEESE</h1>
-        <p>The #1 spot for high-quality procrastination.</p>
+        <div class="tagline">Official Hub of Cheese Productions</div>
     </div>
     
     <div class="grid">
-        <a href="clicker.html" class="card"><div class="emoji">🖱️</div><h2>Cheese Clicker</h2></a>
-        <a href="meter.html" class="card"><div class="emoji">⏳</div><h2>Boredom Meter</h2></a>
-        <a href="scale.html" class="card"><div class="emoji">📏</div><h2>The Big Cheese Scale</h2></a>
-        <a href="toppings.html" class="card"><div class="emoji">🍕</div><h2>Infinite Toppings</h2></a>
-        <a href="sandbox.html" class="card"><div class="emoji">🏗️</div><h2>Cheese Sandbox</h2></a>
-        <a href="life.html" class="card"><div class="emoji">🕰️</div><h2>Life of a Cheese</h2></a>
-        <a href
+        <a href="clicker.html" class="card">
+            <div class="emoji">🖱️</div>
+            <h2>Cheese Clicker</h2>
+        </a>
+
+        <a href="meter.html" class="card">
+            <div class="emoji">⏳</div>
+            <h2>Boredom Meter</h2>
+        </a>
+
+        <a href="scale.html" class="card">
+            <div class="emoji">📏</div>
+            <h2>Cheese Scale</h2>
+        </a>
+
+        <a href="toppings.html" class="card">
+            <div class="emoji">🍕</div>
+            <h2>Infinite Toppings</h2>
+        </a>
+
+        <a href="sandbox.html" class="card">
+            <div class="emoji">🏗️</div>
+            <h2>Cheese Sandbox</h2>
+        </a>
+
+        <a href="life.html" class="card">
+            <div class="emoji">🕰️</div>
+            <h2>Life of a Cheese</h2>
+        </a>
+
+        <a href="poll.html" class="card">
+            <div class="emoji">📊</div>
+            <h2>The Absurd Poll</h2>
+        </a>
+    </div>
+
+    <footer>
+        <p>Stay Bored. Created by Cheese Productions.</p>
+    </footer>
+
+</body>
+</html>

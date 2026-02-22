@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinite Toppings</title>
+    <style>
+        body { background: #f0f0f0; text-align: center; font-family: sans-serif; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 50px; }
+        .item { padding: 15px; border: 2px solid #000; background: white; cursor: pointer; user-select: none; font-weight: bold; }
+        #recipe-book { margin-top: 40px; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>🍕 Infinite Toppings</h1>
+    <p>Click two items to combine them!</p>
+    <div class="container" id="inventory">
+        <div class="item" onclick="select(this)">Bread</div>
+        <div class="item" onclick="select(this)">Cheese</div>
+        <div class="item" onclick="select(this)">Fire</div>
+    </div>
+    <div id="recipe-book">Discovered: 3 items</div>
+
+    <script>
+        let selected = null;
+        const recipes = {
+            "Bread+Cheese": "Grilled Cheese",
+            "Cheese+Fire": "Melted Goo",
+            "Bread+Fire": "Toast",
+            "Melted Goo+Toast": "The Perfect Sandwich"
+        };
+
+        function select(el) {
+            if (!selected) {
+                selected = el;
+                el.style.background = "#ffff00";
+            } else {
+                let combo = [selected.innerText, el.innerText].sort().join("+");
+                if (recipes[combo]) {
+                    addNewItem(recipes[combo]);
+                }
+                selected.style.background = "white";
+                selected = null;
+            }
+        }
+
+        function addNewItem(name) {
+            let items = Array.from(document.querySelectorAll('.item')).map(i => i.innerText);
+            if (!items.includes(name)) {
+                let div = document.createElement('div');
+                div.className = 'item';
+                div.innerText = name;
+                div.onclick = () => select(div);
+                document.getElementById('inventory').appendChild(div);
+                document.getElementById('recipe-book').innerText = "Discovered: " + (items.length + 1) + " items";
+            }
+        }
+    </script>
+</body>
+</html>

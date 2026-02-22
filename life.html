@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Life of a Cheese</title>
+    <style>
+        body { height: 5000px; background: linear-gradient(#fff, #d4a017, #5d4037); font-family: sans-serif; }
+        .stage { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+        .cheese-pic { font-size: 10rem; }
+        .desc { font-size: 2rem; font-weight: bold; background: white; padding: 10px; border: 3px solid #000; }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div id="icon" class="cheese-pic">🥛</div>
+        <div id="text" class="desc">It starts as milk...</div>
+    </div>
+
+    <script>
+        window.onscroll = function() {
+            let p = window.scrollY / 4000;
+            const icon = document.getElementById('icon');
+            const text = document.getElementById('text');
+
+            if (p < 0.2) { icon.innerText = "🥛"; text.innerText = "Fresh Milk"; }
+            else if (p < 0.5) { icon.innerText = "🧀"; text.innerText = "Perfectly Aged"; }
+            else if (p < 0.8) { icon.innerText = "🍄"; text.innerText = "A bit moldy..."; }
+            else { icon.innerText = "🪨"; text.innerText = "Ancient Fossilized Cheese"; }
+        };
+    </script>
+</body>
+</html>

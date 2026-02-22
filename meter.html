@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boredom Meter</title>
+    <style>
+        body { background: #000; color: #00ff00; font-family: monospace; text-align: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+        #timer { font-size: 5rem; }
+        #status { font-size: 1.5rem; margin-top: 20px; color: #888; }
+    </style>
+</head>
+<body>
+    <div id="timer">0.00</div>
+    <div id="status">DON'T MOVE YOUR MOUSE</div>
+    <p>Current Rank: <span id="rank">Bored Amateur</span></p>
+
+    <script>
+        let time = 0;
+        let timerDisplay = document.getElementById('timer');
+        let rankDisplay = document.getElementById('rank');
+
+        function update() {
+            time += 0.01;
+            timerDisplay.innerText = time.toFixed(2);
+            
+            if (time > 10) rankDisplay.innerText = "Bored Professional";
+            if (time > 30) rankDisplay.innerText = "Cheese Sage";
+            if (time > 60) rankDisplay.innerText = "The Boredom King";
+            
+            requestAnimationFrame(update);
+        }
+
+        // RESET if they move or click
+        window.onmousemove = window.onclick = window.onkeypress = () => {
+            if (time > 0.1) alert("You moved! Your boredom lasted " + time.toFixed(2) + " seconds.");
+            time = 0;
+        };
+
+        update();
+    </script>
+</body>
+</html>
